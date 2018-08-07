@@ -1,0 +1,41 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:vm="clr-namespace:TreeView.ViewModels;assembly=TreeView"
+        Title="TreeView" 
+  Width="350"
+  Height="500">
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+  <TreeView Items="{Binding Machines}">
+    <TreeView.DataTemplates>
+      <TreeDataTemplate ItemsSource="{Binding Nodes}" DataType="vm:MachineItemViewModel">
+        <Grid ColumnDefinitions="Auto,Auto">
+          <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="3"/>
+          <TextBlock Grid.Column="1" Text="{Binding Id}" Margin="3"/>
+        </Grid>
+      </TreeDataTemplate>
+      <TreeDataTemplate ItemsSource="{Binding Functions}" DataType="vm:NodeItemViewModel">
+        <Grid ColumnDefinitions="Auto,Auto">
+          <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="3"/>
+          <TextBlock Grid.Column="1" Text="{Binding Id}" Margin="3"/>
+        </Grid>
+      </TreeDataTemplate>
+      <DataTemplate DataType="vm:NodeItemViewModel">
+        <Grid ColumnDefinitions="Auto,Auto">
+          <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="3"/>
+          <TextBlock Grid.Column="1" Text="{Binding Id}" Margin="3"/>
+        </Grid>
+      </DataTemplate>
+      <DataTemplate DataType="vm:FunctionItemViewModel">
+        <Grid ColumnDefinitions="Auto,Auto">
+          <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="3"/>
+          <TextBlock Grid.Column="1" Text="{Binding Id}" Margin="3"/>
+        </Grid>
+      </DataTemplate>
+    </TreeView.DataTemplates>
+  <TreeView.Styles>
+    
+  </TreeView.Styles>
+  </TreeView>
+</Window>
