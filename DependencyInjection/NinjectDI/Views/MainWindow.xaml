@@ -1,0 +1,19 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:NinjectDI.ViewModels;assembly=NinjectDI"
+        Icon="resm:NinjectDI.Assets.avalonia-logo.ico"
+        Title="NinjectDI"     
+        Height="300"
+        Width="400">
+
+  <!--<Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>-->
+
+  <StackPanel>
+    <TextBlock Text="{Binding Number}" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="50"/>
+    <Button Command="{Binding GetRandomNumberCommand}">GetNumber Random</Button>
+    <Button Command="{Binding GetAdditionNumberCommand}">GetNumber Addtion</Button>
+  </StackPanel>
+
+</Window>
